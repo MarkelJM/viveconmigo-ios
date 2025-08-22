@@ -9,8 +9,8 @@
 import Foundation
 
 enum Avatar: String, Codable, CaseIterable, Identifiable {
-    case boy = "alien1"
-    case girl = "alien2"
+    case boy = "personajeOso"
+    case girl = "personajeArbol"
 
     var id: String { self.rawValue }
 }

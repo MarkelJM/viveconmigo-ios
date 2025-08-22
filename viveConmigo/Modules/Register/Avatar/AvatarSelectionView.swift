@@ -23,7 +23,7 @@ struct AvatarSelectionView: View {
                 Button(action: {
                     selectedAvatar = .boy
                 }) {
-                    Image("alien1")
+                    Image("personajeOso")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 100, height: 100)
@@ -37,7 +37,7 @@ struct AvatarSelectionView: View {
                 Button(action: {
                     selectedAvatar = .girl
                 }) {
-                    Image("alien2")
+                    Image("personajeArbol")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 100, height: 100)
