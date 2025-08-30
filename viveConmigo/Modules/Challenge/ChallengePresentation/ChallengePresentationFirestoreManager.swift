@@ -14,7 +14,7 @@ class ChallengePresentationFirestoreManager {
 
     func updateChallengeStatus(challengeID: String, isBegan: Bool) -> AnyPublisher<Void, Error> {
         Future { promise in
-            self.db.collection("challengeEuskadi").document(challengeID).updateData(["isBegan": isBegan]) { error in
+            self.db.collection("challengeMadrid").document(challengeID).updateData(["isBegan": isBegan]) { error in
                 if let error = error {
                     promise(.failure(error))
                 } else {
@@ -27,7 +27,7 @@ class ChallengePresentationFirestoreManager {
 
     func fetchChallengeByName(_ name: String) -> AnyPublisher<Challenge, Error> {
         Future { promise in
-            self.db.collection("challengeEuskadi")
+            self.db.collection("challengeMadrid")
                 .whereField("challengeName", isEqualTo: name)
                 .getDocuments { snapshot, error in
                     if let error = error {

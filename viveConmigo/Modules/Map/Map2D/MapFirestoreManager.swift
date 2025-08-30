@@ -16,7 +16,7 @@ class MapFirestoreManager {
         Future { promise in
             self.db.collection("spots")
                 .document(challengeName)
-                .collection("locationsSpot")
+                .collection("locationSpot")
                 .getDocuments { querySnapshot, error in
                     if let error = error {
                         promise(.failure(error))
@@ -33,7 +33,7 @@ class MapFirestoreManager {
     
     func fetchChallenges() -> AnyPublisher<[Challenge], Error> {
         Future { promise in
-            self.db.collection("challengeEuskadi").getDocuments { querySnapshot, error in
+            self.db.collection("challengeMadrid").getDocuments { querySnapshot, error in
                 if let error = error {
                     promise(.failure(error))
                 } else {
