@@ -39,9 +39,7 @@ struct OnboardingOneView: View {
                                 .padding(.top, 40)
                             
                             Text("""
-                                ¡Hola! Nuestra nave a tenido unos problemas y hemos aterrizado aquí. Según nuestras coordenadas deberíamos de estar en Euskadi. Parece un lugar hermoso, ¿nos ayudas a conocerlo?
-                                
-                                ¡Vamos a la Conquista de EuskadiGO!
+                                Seguro que eres Madrileño? Yo, vivo en estos lugares desde hace mucho tiempo…y desde el siglo XIII soy incluso el símbolo de la ciudad! Pero esta ciudad ha cambiado tanto que siempre encuentro nuevos tesoros que enseñar an mis amigos. Te animas a hacer una ruta gamificada conmigo? Anímate, por el camino encontraremos ricas recompensas (como mis queridos madroños) y premios! 
                                 """)
                                 .font(.body)
                                 .foregroundColor(.mateWhite)

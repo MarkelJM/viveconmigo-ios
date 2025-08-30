@@ -39,7 +39,7 @@ struct OnboardingTwoView: View {
                             .padding(.top, 40)
                         
                         Text("""
-                            Elige el reto que más te guste. Puedes elegir rutas por los diferentes territorios históricos, ciudades, gastronomía o incluso sobre el Euskera.  Tras finalizar cada reto conseguirás una recompensa.
+                            Elige el reto que más te guste. Puedes elegir rutas con diferentes temáticas.  Tras finalizar cada reto conseguirás una recompensa.
                             """)
                             .font(.body)
                             .foregroundColor(.mateWhite)

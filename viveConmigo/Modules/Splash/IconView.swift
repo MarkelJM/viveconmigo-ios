@@ -29,7 +29,7 @@ struct IconView: View {
                     .padding(.top, 50)
                 ZStack {
                     if showEsloganES {
-                        Image("esloganES")
+                        Image("ESLOGAN1")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 350, height: 120) // Ajustamos el tamaño
@@ -38,7 +38,7 @@ struct IconView: View {
                     }
 
                     if showEsloganEUS {
-                        Image("esloganEUS")
+                        Image("ESLOGAN2")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 350, height: 120) // Ajustamos el tamaño
