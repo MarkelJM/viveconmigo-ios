@@ -20,7 +20,7 @@ struct IconView: View {
                 .edgesIgnoringSafeArea(.all)
 
             VStack {
-                Image("appstore")
+                Image("iconoMadrid")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 150, height: 150)
