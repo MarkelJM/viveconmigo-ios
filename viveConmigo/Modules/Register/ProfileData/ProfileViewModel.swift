@@ -28,6 +28,11 @@ class ProfileViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     func saveUserProfile(completion: @escaping () -> Void) {
+        
+        
+        self.birthDate = Calendar.current.startOfDay(for: Date())
+        
+        
         guard let email = Auth.auth().currentUser?.email else {
             showError = true
             errorMessage = "Email no encontrado."
@@ -119,6 +124,11 @@ class ProfileViewModel: ObservableObject {
     func validateCity() -> Bool {
         let cityPattern = "^[A-Za-záéíóúÁÉÍÓÚñÑ\\s]+$"
         return city.range(of: cityPattern, options: .regularExpression) != nil
+    }
+    
+    func setRegistrationDateToToday() {
+        let today = Calendar.current.startOfDay(for: Date())
+        self.birthDate = today
     }
 
 }

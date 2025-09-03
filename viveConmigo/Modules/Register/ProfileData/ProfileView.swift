@@ -16,7 +16,8 @@ struct ProfileView: View {
         ZStack {
             // Fondo con gradiente suave o imagen de fondo
             Fondo()
-
+                .ignoresSafeArea()
+                .allowsHitTesting(false)
             ScrollView {
                 VStack(spacing: 20) {
                     HStack {
@@ -50,12 +51,40 @@ struct ProfileView: View {
                         .background(Color.mateWhite.opacity(0.8)) // Usamos mateWhite
                         .cornerRadius(10)
                         .padding(.horizontal, 40)
-
+                    /*
                     DatePicker("Fecha de Nacimiento", selection: $viewModel.birthDate, displayedComponents: .date)
                         .padding()
                         .background(Color.mateWhite.opacity(0.8)) // Usamos mateWhite
                         .cornerRadius(10)
                         .padding(.horizontal, 40)
+                    */
+                    /*
+                    DatePicker("Fecha de inscripcion",
+                               selection: $viewModel.birthDate,
+                               displayedComponents: .date)
+                        .datePickerStyle(.compact)  // <- explícito
+                        .padding()
+                        .background(Color.mateWhite.opacity(0.8))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 40)
+                    */
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("Fecha de inscripción")
+                            .font(.headline)
+                            .foregroundColor(.mateGold)
+                            .padding(.horizontal, 40)
+
+                        Text(esFormatter.string(from: viewModel.birthDate))
+                            .padding()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .background(Color.mateWhite.opacity(0.8))
+                            .cornerRadius(10)
+                            .padding(.horizontal, 40)
+                    }
+                    
+                    
+                    
+                    
 
                     TextField("Código Postal", text: $viewModel.postalCode)
                         .padding()
@@ -119,15 +148,41 @@ struct ProfileView: View {
             }
             .onAppear {
                 viewModel.fetchUserProfile()
+                viewModel.setRegistrationDateToToday()
             }
+            /*
             .onTapGesture {
                 hideKeyboard()
             }
+             */
+            .simultaneousGesture(
+                TapGesture().onEnded { hideKeyboard() }
+            )
+            .ifAvailableiOS16DismissesKeyboard()
         }
     }
     
     private func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    
+    private let esFormatter: DateFormatter = {
+        let f = DateFormatter()
+        f.locale = Locale(identifier: "es_ES")
+        f.dateStyle = .long
+        return f
+    }()
+}
+
+
+extension View {
+    @ViewBuilder
+    func ifAvailableiOS16DismissesKeyboard() -> some View {
+        if #available(iOS 16.0, *) {
+            self.scrollDismissesKeyboard(.interactively)
+        } else {
+            self
+        }
     }
 }
 

@@ -68,8 +68,9 @@ struct CustomTabBar: View {
             }
             .frame(height: 80)
             .padding(.horizontal, 16)
-            .background(Color.mateGold.opacity(0.8))
-            
+            //.background(Color.mateGold.opacity(0.8))
+            .background(Color.mateGoldReal.opacity(0.8))
+
             .shadow(radius: 5)
             .edgesIgnoringSafeArea(.bottom)
 
