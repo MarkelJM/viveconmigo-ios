@@ -21,11 +21,24 @@ struct RegisterView: View {
            
            ScrollView {
                VStack(spacing: 20) {
+                   Button(action: {
+                       appState.currentView = .login
+                   }) {
+                       Image(systemName: "chevron.left")
+                           .font(.headline)
+                           .padding()
+                           .background(Color.mateGold)
+                           .foregroundColor(.black)
+                           .cornerRadius(10)
+                           .padding(.top, 50)
+                   }
+                   //Spacer()
+                   
                    Text("Registra email")
                        .font(.largeTitle)
                        .fontWeight(.bold)
                        .foregroundColor(.mateGold)
-                       .padding(.top, 50)
+                       //.padding(.top, 0)
                    
                    TextField("Email", text: $viewModel.email)
                        .padding()

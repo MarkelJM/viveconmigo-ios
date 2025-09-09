@@ -206,7 +206,7 @@ struct ResultDatesOrderView: View {
                     viewModel.fetchTranslationForActivity(activityId: viewModel.activityId)  // Cargar la traducción directamente en Euskera
                     showTranslationSheet = true  // Mostrar el sheet de traducción
                 }) {
-                    Label("Mostrar traducción en Euskera", systemImage: "globe")
+                    Label("Mostrar traducción en Inglés", systemImage: "globe")
                         .padding()
                         .background(Color.mateBlueMedium)
                         .foregroundColor(.mateWhite)

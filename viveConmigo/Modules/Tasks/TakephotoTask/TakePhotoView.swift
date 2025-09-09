@@ -138,7 +138,7 @@ struct ResultTakePhotoView: View {
                     viewModel.fetchTranslationForActivity(activityId: viewModel.activityId) // Cargar la traducción
                     showTranslationSheet = true // Mostrar el sheet para traducción
                 }) {
-                    Label("Mostrar traducción en Euskera", systemImage: "globe")
+                    Label("Mostrar traducción en Inglés", systemImage: "globe")
                         .padding()
                         .background(Color.mateBlueMedium)
                         .foregroundColor(.mateWhite)

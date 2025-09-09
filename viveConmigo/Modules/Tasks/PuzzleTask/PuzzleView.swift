@@ -237,7 +237,7 @@ struct ResulPuzzleSheetView: View {
                 Button(action: {
                     viewModel.fetchTranslationForActivity(activityId: viewModel.activityId)  // Cargar la traducción en Euskera
                 }) {
-                    Label("Mostrar traducción en Euskera", systemImage: "globe")
+                    Label("Mostrar traducción en Inglés", systemImage: "globe")
                         .padding()
                         .background(Color.mateBlueMedium)
                         .foregroundColor(.mateWhite)
